@@ -1,0 +1,19 @@
+# Python (Backend)
+venv/
+__pycache__/
+*.pyc
+clinic.db
+temp_audio.webm
+temp.webm
+
+# React (Frontend)
+node_modules/
+dist/
+.eslintcache
+
+# Secrets (CRITICAL)
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db

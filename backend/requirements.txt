@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+google-genai
+groq
+edge-tts
+python-dotenv
+websockets
