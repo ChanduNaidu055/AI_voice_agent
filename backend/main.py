@@ -15,6 +15,18 @@ except Exception as e:
     exit(1) 
 
 app = FastAPI()
+
+# --- Added Root Route for Deployment Health Check ---
+@app.get("/")
+def home():
+    return {
+        "status": "online",
+        "project": "2care.ai AI Voice Agent",
+        "version": "1.0.0",
+        "websocket_endpoint": "/ws/chat"
+    }
+# ---------------------------------------------------
+
 agent = HealthAgent()
 stt_service = STTService()
 
@@ -66,5 +78,7 @@ async def websocket_endpoint(websocket: WebSocket):
         print(f"Session ended or Error: {e}")
 
 if __name__ == "__main__":
+    # Note: On Railway, uvicorn is usually managed by the start command, 
+    # but this block remains for your local testing.
     print("Starting 2Care.ai Server on http://localhost:8000")
     uvicorn.run(app, host="0.0.0.0", port=8000)
