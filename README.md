@@ -1,8 +1,6 @@
-# 2Care.ai: Multilingual Voice AI Medical Assistant:
+# Multilingual Voice AI Medical Assistant:
 
 A high-performance, real-time Voice AI agent designed to bridge the gap between healthcare providers and patients. The system allows users to book medical appointments using natural speech in **English, Hindi, Telugu, and Tamil**, providing an instant, multilingual voice-to-voice experience.
-
-This project was developed for the **2Care.ai Engineering Challenge**, focusing on low-latency orchestration, native regional language support, and robust asynchronous architecture.
 
 ## Architectural Decisions
 
