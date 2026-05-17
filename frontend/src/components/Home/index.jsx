@@ -22,7 +22,7 @@ export default function Home() {
   }, [messages]);
 
   useEffect(() => {
-    const backendUrl = import.meta.env.REACT_APP_BACKEND_URL || "ws://localhost:8000";
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || "ws://localhost:8000";
     ws.current = new WebSocket(`${backendUrl}/ws/chat`);
 
     ws.current.onopen = () => setIsConnected(true);
