@@ -6,7 +6,7 @@ export default function Home() {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Hello! I am your 2Care.ai Assistant. How can I help you today?",
+      text: "Hello Chandu! I am your AI Assistant. How can I help you today?",
     },
   ]);
   const [isRecording, setIsRecording] = useState(false);
@@ -22,7 +22,8 @@ export default function Home() {
   }, [messages]);
 
   useEffect(() => {
-    ws.current = new WebSocket("ws://localhost:8000/ws/chat");
+    const backendUrl = import.meta.env.REACT_APP_BACKEND_URL || "ws://localhost:8000";
+    ws.current = new WebSocket(`${backendUrl}/ws/chat`);
 
     ws.current.onopen = () => setIsConnected(true);
     ws.current.onclose = () => setIsConnected(false);
